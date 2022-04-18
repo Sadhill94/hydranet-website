@@ -1,29 +1,18 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
 
-import Layout from '../src/components/Templates/Layout';
-import ProductsSection from '../src/components/Templates/ProductsSection';
-import RoadmapSection from '../src/components/Templates/RoadmapSection';
-import ArticlesSection from '../src/components/Templates/ArticlesSection';
-import AboutSection from '../src/components/Templates/AboutSection';
-import Landing from '../src/components/Templates/Landing';
-import MetaTags from '../src/components/Atoms/MetaTags';
+import { useRedirect } from '../src/hooks/useRedirect';
 
-const Home: NextPage = () => (
-  <>
-    <Head>
-      <title>Hydranet: Combining Bitcoin and DeFi</title>
-      <MetaTags />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <Layout>
-      <Landing />
-      <AboutSection id={'about'} />
-      <ProductsSection id={'products'} />
-      <RoadmapSection id={'roadmap'} />
-      <ArticlesSection id={'articles'} />
-    </Layout>
-  </>
-);
+/**
+ * This page is only used for redirect to the visitor browser language (if supported, otherwise the default is 'en')
+ * NextJs lack of motivation to fully support the i18n module for SSG(next export) doesn't allow to have / as english and /{locale} for others
+ * Each one of them have to be under /{locale}
+ * Vercel, if you read this, fuck you.
+ * Another point, after gathering infos, it is shown that, having a multi lingual website that ends with the /{locale} is better for SEO
+ * @constructor
+ */
+const Index: React.FC = () => {
+  useRedirect();
+  return <></>;
+};
 
-export default Home;
+export default Index;

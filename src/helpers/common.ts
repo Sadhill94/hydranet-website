@@ -20,3 +20,10 @@ export function extractThumbnailsFromHtmlString(htmlString: string) {
     return fallbackImg;
   }
 }
+
+/**
+ * Allow a value in Array to be typed
+ * eg: type
+ */
+export type ElementType<T extends ReadonlyArray<unknown>> =
+  T extends ReadonlyArray<infer ElementType> ? ElementType : never;
