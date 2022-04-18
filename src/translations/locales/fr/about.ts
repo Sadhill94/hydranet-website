@@ -1,4 +1,4 @@
-import { IAboutSectionTranslations } from '../../types';
+import { IAboutSectionTranslations } from '../../namepaces';
 
 const about: IAboutSectionTranslations = {
   subtitle: 'explain like im five',

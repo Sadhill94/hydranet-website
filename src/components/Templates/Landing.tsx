@@ -1,7 +1,9 @@
 import Hero from '../Molecules/Hero';
 import Particles from '../Atoms/Particles';
+import useTranslation from '../../hooks/useTranslation';
 
 const Landing = () => {
+  const { t } = useTranslation();
   return (
     <Hero
       className={' bg-hydra-bg bg-cover bg-left bg-no-repeat lg:bg-center '}
@@ -32,24 +34,24 @@ const Landing = () => {
           data-aos="fade-right"
           data-aos-delay="300"
         >
-          STAKING. BONDING. DECENTRALIZED GOVERNANCE.
+          {t('landing', 'caption')}
         </div>
         <div
           className={
-            'font-exo my-6 text-4xl font-bold tracking-wider text-white sm:text-5xl lg:text-8xl'
+            'font-exo my-6 text-4xl font-bold uppercase tracking-wider text-white sm:text-5xl lg:text-6xl xl:text-8xl'
           }
           data-aos="zoom-in"
         >
-          HYDRANET
+          {t('landing', 'title')}
         </div>
         <div
           className={
-            'font-exo text-fill-color bg-landing-gradient bg-clip-text text-xl font-semibold tracking-wider sm:text-2xl lg:text-3xl'
+            'font-exo text-fill-color bg-landing-gradient bg-clip-text text-xl font-semibold uppercase tracking-wider sm:text-2xl lg:text-3xl'
           }
           data-aos="fade-left"
           data-aos-delay="300"
         >
-          ABSTRACTIVE INTEROPERABILITY
+          {t('landing', 'subtitle')}
         </div>
       </div>
       {/*Coins stats disabled for now until we are listed on CMC or Coin Gecko*/}

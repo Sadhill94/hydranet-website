@@ -1,4 +1,4 @@
-import { ICommonTranslations } from '../../types';
+import { ICommonTranslations } from '../../namepaces';
 
 const common: ICommonTranslations = {
   'coming-soon': 'Coming soon',

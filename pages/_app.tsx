@@ -1,9 +1,10 @@
-import '../src/styles/globals.css';
+import { useEffect } from 'react'; // You can also use <link> for styles
 import '@fortawesome/fontawesome-free/css/all.css';
 import type { AppProps } from 'next/app';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react'; // You can also use <link> for styles
+
+import '../src/styles/globals.css';
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     AOS.init({

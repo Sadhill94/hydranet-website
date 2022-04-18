@@ -1,4 +1,6 @@
-import { Locale, ITranslations } from '../types';
+import { ITranslations } from '../namepaces';
+import { Locale } from '../types';
+
 import en from './en';
 import fr from './fr';
 

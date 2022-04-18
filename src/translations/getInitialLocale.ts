@@ -7,7 +7,5 @@ export function getInitialLocale(): Locale {
   if (isLocale(browserSetting)) {
     return browserSetting;
   }
-
-  debugger;
   return defaultLocale;
 }
