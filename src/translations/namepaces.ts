@@ -42,7 +42,15 @@ export interface ILandingTranslations {
 export interface IAboutSectionTranslations {
   subtitle: string;
   title: string;
-  'paragraph-1': string;
-  'paragraph-2': string;
-  'paragraph-3': string;
+  paragraphs: Array<string>;
+}
+
+/**
+ * Products namespace
+ */
+export interface IProductsSectionTranslations {
+  subtitle: string;
+  title: string;
+  paragraphs: Array<string>;
+  'current-build': string;
 }
