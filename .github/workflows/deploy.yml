@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - staging
-      - feature/deploy-ci
+      - deploy
 
 jobs:
   deploy:
@@ -75,6 +75,6 @@ jobs:
           bucket: ${{ env.S3_BUCKET }}
           bucket-region: ${{ env.S3_BUCKET_REGION }}
           dist-id: ${{ env.CLOUDFRONT_DISTRIBUTION_ID }}
-          invalidation: /*
+          invalidation: /*  # reset cache for cloudfront for all content of the directory
           delete-removed: true
           private: false
