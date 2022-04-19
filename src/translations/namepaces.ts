@@ -8,6 +8,7 @@ export interface ITranslations {
   about: IAboutSectionTranslations;
   products: IProductsSectionTranslations;
   timeline: ITimelineSectionTranslations;
+  articles: IArticlesSectionTranslation;
 }
 
 /**
@@ -70,4 +71,13 @@ interface ITimelineItemTranslation {
   title: string;
   status: string;
   body: Array<string>;
+}
+
+/**
+ * Articles namespace
+ */
+export interface IArticlesSectionTranslation {
+  title: string;
+  subtitle: string;
+  'error-fetch': string;
 }

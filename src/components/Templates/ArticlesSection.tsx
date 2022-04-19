@@ -8,11 +8,13 @@ import CardSkeleton from '../Atoms/CardSkeleton';
 import { IAppSection, IArticle, IMediumRssResponseDto } from '../../interfaces';
 import { HYDRANET_MEDIUM_FETCH_URL } from '../../constants';
 import { extractThumbnailsFromHtmlString } from '../../helpers/common';
+import useTranslation from '../../hooks/useTranslation';
 
 const ArticlesSection = ({ id }: IAppSection) => {
   const [articles, setArticles] = useState<Array<IArticle>>([]);
   const [hasErrorFetching, setHasErrorFetching] = useState<boolean>(false);
 
+  const { t } = useTranslation();
   /**
    * Fetch dynamically medium articles from our AWS lambda that get the feed, parse it and send it as json
    * Won't be referenced as it is fetch client side
@@ -69,10 +71,13 @@ const ArticlesSection = ({ id }: IAppSection) => {
         }`}
       >
         <div className={'pt-20 xl:pt-[100px]'} />
-        <Caption hashLabel={'news'} title={'Latest articles'} />
+        <Caption
+          hashLabel={t('articles', 'subtitle')}
+          title={t('articles', 'title')}
+        />
         {hasErrorFetching ? (
           <div className={'text-center text-lg text-white lg:mt-12'}>
-            Sorry ! An error occurred while retrieving the latest news.
+            {t('articles', 'error-fetch')}
           </div>
         ) : articles.length < 1 ? (
           <div className="grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-2 md:gap-y-12 lg:grid-cols-3">
