@@ -2,11 +2,11 @@ import { ITranslations } from '../namepaces';
 import { Locale } from '../types';
 
 import en from './en';
-import fr from './fr';
+// import fr from './fr';
 
 const locales: Record<Locale, ITranslations> = {
   en,
-  fr,
+  // fr,
 };
 
 export default locales;
