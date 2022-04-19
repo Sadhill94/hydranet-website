@@ -4,16 +4,11 @@ import Card from './Card';
 
 export type TimelineItemProps = {
   side?: keyof typeof Sides;
-  additionalInfo?: string;
+  status?: string;
   title: string;
   body: Array<string>;
 };
-const TimelineItem = ({
-  additionalInfo = 'hey',
-  title,
-  body,
-  side,
-}: TimelineItemProps) => {
+const TimelineItem = ({ status, title, body, side }: TimelineItemProps) => {
   return (
     <div
       className={mergeClassNames(
@@ -30,7 +25,7 @@ const TimelineItem = ({
           data-aos={side === 'left' ? 'fade-right' : 'fade-left'}
           data-aos-delay="200"
         >
-          {additionalInfo}
+          {status}
         </div>
       </div>
       <div
@@ -49,7 +44,7 @@ const TimelineItem = ({
       >
         <Card>
           <div className="mb-1 text-left font-semibold text-brand-aqua md:hidden">
-            {additionalInfo}
+            {status}
           </div>
           <div className="mb-3 text-left text-xl font-bold text-white">
             {title}

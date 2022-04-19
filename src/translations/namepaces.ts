@@ -7,6 +7,7 @@ export interface ITranslations {
   landing: ILandingTranslations;
   about: IAboutSectionTranslations;
   products: IProductsSectionTranslations;
+  timeline: ITimelineSectionTranslations;
 }
 
 /**
@@ -54,4 +55,19 @@ export interface IProductsSectionTranslations {
   title: string;
   paragraphs: Array<string>;
   'current-build'?: string;
+}
+
+/**
+ * Timeline namespace
+ */
+export interface ITimelineSectionTranslations {
+  subtitle: string;
+  title: string;
+  items: Array<ITimelineItemTranslation>;
+}
+
+interface ITimelineItemTranslation {
+  title: string;
+  status: string;
+  body: Array<string>;
 }

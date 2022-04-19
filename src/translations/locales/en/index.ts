@@ -2,6 +2,7 @@ import common from './common';
 import landing from './landing';
 import about from './about';
 import products from './products';
+import timeline from './timeline';
 
 /**
  * Add new namespace translations here, dont forget to add it as well for others languages
@@ -12,4 +13,5 @@ export default {
   landing,
   about,
   products,
+  timeline,
 };
