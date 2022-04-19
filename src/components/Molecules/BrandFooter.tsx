@@ -1,10 +1,13 @@
 import Socials from './Socials';
 import Container from '../Atoms/Container';
+
 import { handleScrollTo } from '../../helpers/events';
+import useTranslation from '../../hooks/useTranslation';
 
 const currentYear: number = new Date().getFullYear();
 
 const BrandFooter = () => {
+  const { t } = useTranslation();
   return (
     <Container size={'xl'}>
       <footer
@@ -24,7 +27,7 @@ const BrandFooter = () => {
       <p
         className={'md:text-md pb-6 pt-8 text-center text-sm text-brand-greyed'}
       >
-        © {currentYear} All rights reserved. Hydranet.ai
+        © {currentYear} {t('common', 'all-right-reserved')}
       </p>
     </Container>
   );

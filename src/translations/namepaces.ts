@@ -3,13 +3,13 @@
  *
  */
 export interface ITranslations {
+  navbar: INavbarLinksTranslations;
   common: ICommonTranslations;
   landing: ILandingTranslations;
   about: IAboutSectionTranslations;
   products: IProductsSectionTranslations;
   timeline: ITimelineSectionTranslations;
   articles: IArticlesSectionTranslations;
-  navbar: INavbarLinksTranslations;
 }
 
 /**
@@ -21,14 +21,20 @@ export interface ITranslations {
  */
 export interface ICommonTranslations {
   'coming-soon': string;
-  product: string;
-  roadmap: string;
-  timeline: string;
-  done: string;
-  'in-progress': string;
-  news: string;
-  'latest-articles': string;
   'all-right-reserved': string;
+}
+
+/**
+ * Navbar links namespace
+ */
+export interface INavbarLinksTranslations {
+  products: string;
+  roadmap: string;
+  news: string;
+  docs: string;
+  voting: string;
+  buy: string;
+  'launch-app': string;
 }
 
 /**
@@ -81,17 +87,4 @@ export interface IArticlesSectionTranslations {
   title: string;
   subtitle: string;
   'error-fetch': string;
-}
-
-/**
- * Navbar links namespace
- */
-export interface INavbarLinksTranslations {
-  products: string;
-  roadmap: string;
-  news: string;
-  docs: string;
-  voting: string;
-  buy: string;
-  'launch-app': string;
 }
