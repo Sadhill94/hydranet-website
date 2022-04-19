@@ -43,9 +43,9 @@ jobs:
 
       - name: check variables
         run: |
-          echo $S3_BUCKET
-          echo $S3_BUCKET_REGION
-          echo $CLOUDFRONT_DISTRIBUTION_ID_DEV
+          echo "$S3_BUCKET: ${$S3_BUCKET}"
+          echo "$S3_BUCKET_REGION: ${$S3_BUCKET_REGION}"
+          echo "$CLOUDFRONT_DISTRIBUTION_ID_DEV: ${$CLOUDFRONT_DISTRIBUTION_ID_DEV}"
 
       - name: checkout
         uses: actions/checkout@v2
