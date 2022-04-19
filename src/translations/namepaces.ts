@@ -6,6 +6,7 @@ export interface ITranslations {
   common: ICommonTranslations;
   landing: ILandingTranslations;
   about: IAboutSectionTranslations;
+  products: IProductsSectionTranslations;
 }
 
 /**
@@ -52,5 +53,5 @@ export interface IProductsSectionTranslations {
   subtitle: string;
   title: string;
   paragraphs: Array<string>;
-  'current-build': string;
+  'current-build'?: string;
 }
