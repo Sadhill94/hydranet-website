@@ -50,11 +50,11 @@ jobs:
         echo "env.S3_BUCKET_REGION ${{env.S3_BUCKET_REGION}}"
         echo "env.CLOUDFRONT_DISTRIBUTION_ID_DEV {{env.CLOUDFRONT_DISTRIBUTION_ID_DEV}}"
 
-      - name: check variables3
-        run: |
-        echo "S3_BUCKET {$S3_BUCKET}"
-        echo "S3_BUCKET_REGION ${S3_BUCKET_REGION}"
-        echo "CLOUDFRONT_DISTRIBUTION_ID_DEV {CLOUDFRONT_DISTRIBUTION_ID_DEV}"
+#      - name: check variables3
+#        run: |
+#        echo "S3_BUCKET {$S3_BUCKET}"
+#        echo "S3_BUCKET_REGION ${S3_BUCKET_REGION}"
+#        echo "CLOUDFRONT_DISTRIBUTION_ID_DEV {CLOUDFRONT_DISTRIBUTION_ID_DEV}"
 
       - name: checkout
         uses: actions/checkout@v2
