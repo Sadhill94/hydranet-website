@@ -5,45 +5,54 @@ import Container from '../Atoms/Container';
 import { HYDRANET_APP, UNISWAP_BUY_LINK } from '../../constants';
 import { INavigationLink } from '../../interfaces';
 import { handleScrollTo } from '../../helpers/events';
-
-const navigation: INavigationLink[] = [
-  {
-    name: 'Products',
-    href: '#products',
-  },
-  {
-    name: 'Roadmap',
-    href: '#roadmap',
-  },
-  {
-    name: 'News',
-    href: '#articles',
-  },
-  {
-    name: 'Docs',
-    href: 'https://hydranet-1.gitbook.io/hydranet/',
-    target: '_blank',
-  },
-  {
-    name: 'Voting',
-    href: 'https://snapshot.org/#/hydranet.eth/',
-    target: '_blank',
-  },
-  {
-    name: 'Buy $HDX',
-    href: UNISWAP_BUY_LINK,
-    target: '_blank',
-    bg: 'bg-brand-light-blue',
-  },
-  {
-    name: 'Launch APP',
-    href: HYDRANET_APP,
-    target: '_blank',
-    bg: 'bg-primary-gradient',
-  },
-];
+import { useEffect, useState } from 'react';
+import useTranslation from '../../hooks/useTranslation';
 
 const Navbar = () => {
+  const [navigationLinks, setNavigationLinks] = useState<
+    Array<INavigationLink>
+  >([]);
+
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    setNavigationLinks([
+      {
+        name: t('navbar', 'products'),
+        href: '#products',
+      },
+      {
+        name: t('navbar', 'roadmap'),
+        href: '#roadmap',
+      },
+      {
+        name: t('navbar', 'news'),
+        href: '#articles',
+      },
+      {
+        name: t('navbar', 'docs'),
+        href: 'https://hydranet-1.gitbook.io/hydranet/',
+        target: '_blank',
+      },
+      {
+        name: t('navbar', 'voting'),
+        href: 'https://snapshot.org/#/hydranet.eth/',
+        target: '_blank',
+      },
+      {
+        name: t('navbar', 'buy'),
+        href: UNISWAP_BUY_LINK,
+        target: '_blank',
+        bg: 'bg-brand-light-blue',
+      },
+      {
+        name: t('navbar', 'launch-app'),
+        href: HYDRANET_APP,
+        target: '_blank',
+        bg: 'bg-primary-gradient',
+      },
+    ]);
+  });
   /**
    * Handler to close the mobile menu when a link is clicked
    * @param href
@@ -86,7 +95,7 @@ const Navbar = () => {
               </div>
               {/* LG menu */}
               <div className="my-auto hidden h-10 sm:space-x-3 lg:flex">
-                {navigation.map((link) => {
+                {navigationLinks.map((link) => {
                   if (link.href.startsWith('#')) {
                     return (
                       <button
@@ -132,7 +141,7 @@ const Navbar = () => {
             <Container>
               <Disclosure.Panel>
                 <ul className="space-y-3 pt-2 pb-3">
-                  {navigation.map((link) => (
+                  {navigationLinks.map((link) => (
                     <li
                       key={link.href}
                       className={

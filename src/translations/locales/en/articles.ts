@@ -1,6 +1,6 @@
-import { IArticlesSectionTranslation } from '../../namepaces';
+import { IArticlesSectionTranslations } from '../../namepaces';
 
-const articles: IArticlesSectionTranslation = {
+const articles: IArticlesSectionTranslations = {
   subtitle: 'news',
   title: 'Latest Articles',
   'error-fetch': 'Sorry ! An error occurred while retrieving the latest news.',

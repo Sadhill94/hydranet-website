@@ -8,7 +8,8 @@ export interface ITranslations {
   about: IAboutSectionTranslations;
   products: IProductsSectionTranslations;
   timeline: ITimelineSectionTranslations;
-  articles: IArticlesSectionTranslation;
+  articles: IArticlesSectionTranslations;
+  navbar: INavbarLinksTranslations;
 }
 
 /**
@@ -76,8 +77,21 @@ interface ITimelineItemTranslation {
 /**
  * Articles namespace
  */
-export interface IArticlesSectionTranslation {
+export interface IArticlesSectionTranslations {
   title: string;
   subtitle: string;
   'error-fetch': string;
+}
+
+/**
+ * Navbar links namespace
+ */
+export interface INavbarLinksTranslations {
+  products: string;
+  roadmap: string;
+  news: string;
+  docs: string;
+  voting: string;
+  buy: string;
+  'launch-app': string;
 }
