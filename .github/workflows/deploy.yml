@@ -38,7 +38,7 @@ jobs:
           echo "CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_STG }}" >> $GITHUB_ENV
 
       - name: Configuration for dev branch
-        if: ${{ github.ref == 'refs/heads/feature/deploy-cli' }}
+        if: ${{ github.ref == 'refs/heads/feature/deploy-ci' }}
         run: |
            echo "S3_BUCKET=${{ secrets.S3_BUCKET_DEV }}" >> $GITHUB_ENV
            echo "S3_BUCKET_REGION=${{ secrets.S3_BUCKET_REGION_DEV }}" >> $GITHUB_ENV
