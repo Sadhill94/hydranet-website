@@ -41,14 +41,15 @@ jobs:
            echo "S3_BUCKET_REGION=${{ secrets.S3_BUCKET_REGION_DEV }}" >> $GITHUB_ENV
            echo "CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_DEV }}" >> $GITHUB_ENV
 
-      - name: check variables3
-        run: echo "S3_BUCKET: ${{env.S3_BUCKET}}"
+      - name: check variables2
+        run: echo "env.S3_BUCKET ${{env.S3_BUCKET}}"
+        run: echo "env.S3_BUCKET_REGION ${{env.S3_BUCKET_REGION}}"
+        run: echo "env.CLOUDFRONT_DISTRIBUTION_ID_DEV {{env.CLOUDFRONT_DISTRIBUTION_ID_DEV}}"
 
-      - name: check variables4
-        run: echo "S3_BUCKET_REGION: ${{env.S3_BUCKET_REGION}}"
-
-      - name: check variables5
-        run: echo "CLOUDFRONT_DISTRIBUTION_ID_DEV: ${{env.CLOUDFRONT_DISTRIBUTION_ID_DEV}}"
+      - name: check variables2
+        run: echo "S3_BUCKET {$S3_BUCKET}"
+        run: echo "S3_BUCKET_REGION ${S3_BUCKET_REGION}"
+        run: echo "CLOUDFRONT_DISTRIBUTION_ID_DEV {CLOUDFRONT_DISTRIBUTION_ID_DEV}"
 
       - name: checkout
         uses: actions/checkout@v2
