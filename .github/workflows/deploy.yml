@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - staging
+      - 'releases/**'
       - develop
 
 jobs:
@@ -28,7 +29,8 @@ jobs:
           echo "CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_PRD }}" >> $GITHUB_ENV
 
       - name: Configuration for staging branch
-        if: ${{ github.ref == 'refs/heads/staging' }}
+        if: contains(github.ref, ["release", "staging"])
+#        if: ${{ github.ref == 'refs/heads/staging' || github.ref }}
         run: |
           echo "S3_BUCKET=${{ secrets.S3_BUCKET_STG }}" >> $GITHUB_ENV
           echo "S3_BUCKET_REGION=${{ secrets.S3_BUCKET_REGION_STG }}" >> $GITHUB_ENV
