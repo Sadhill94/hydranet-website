@@ -29,7 +29,7 @@ jobs:
           echo "CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_PRD }}" >> $GITHUB_ENV
 
       - name: Configuration for staging branch
-        if: contains(github.ref, ['release', 'staging'])
+        if: contains(github.ref, 'release') || contains(github.ref, 'staging')
 #        if: ${{ github.ref == 'refs/heads/staging' || github.ref }}
         run: |
           echo "YEAH STAGING FILE"
