@@ -29,7 +29,7 @@ jobs:
           echo "CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_PRD }}" >> $GITHUB_ENV
 
       - name: Configuration for staging branch
-        if: contains(github.ref, "release")
+        if: contains(github.ref, 'release')
 #        if: ${{ github.ref == 'refs/heads/staging' || github.ref }}
         run: |
           echo "S3_BUCKET=${{ secrets.S3_BUCKET_STG }}" >> $GITHUB_ENV
